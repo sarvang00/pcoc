@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:bullseye
 LABEL org.opencontainers.image.authors=carine.rey@ens-lyon.org
 
 RUN apt-get update && \

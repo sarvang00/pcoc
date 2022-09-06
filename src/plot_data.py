@@ -379,15 +379,46 @@ class SequenceScoreFace(StaticItemFace):
 ### Function
 
 def get_corr_color(x):
-    score = [1,0.99,0.9,0.8,0.7,0.5, 0.3, 0.1, 0]
-    color = ["red", "red",  "orange", "#EFDB00", "#6BAC00","#008000", "#7174D0", "#800080", "#A3A3A3"]
+    # score = [1,0.99,0.9,0.8,0.7,0.5, 0.3, 0.1, 0]
+    # color = ["red", "red",  "orange", "#EFDB00", "#6BAC00","#008000", "#7174D0", "#800080", "#A3A3A3"]
     score = [1,0.99,0.9,0.8,0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0]
     color = ["#9E0142","#9E0142","#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD","#5E4FA2","#A3A3A3"]
+    
+    # just a default res which should be overwrittern. If you see purple, cry!
+    res = "#8E7CC3"
 
-    for i in range(len(score)):
-        if x >= score[i]:
-            res = color[i]
-            break
+    # for i in range(len(score)):
+    #     if x >= score[i]:
+    #         res = color[i]
+    #         break
+
+    # alternative logic for assigning colors
+    if x>=0 and len(color)==len(score):
+        if x ==1:
+            res = color[0]
+        elif x<1 and x>=0.99:
+            res = color[1]
+        elif x<0.99 and x>=0.9:
+            res = color[2]
+        elif x<0.9 and x>=0.8:
+            res = color[3]
+        elif x<0.8 and x>=0.7:
+            res = color[4]
+        elif x<0.7 and x>=0.6:
+            res = color[5]
+        elif x<0.6 and x>=0.5:
+            res = color[6]
+        elif x<0.5 and x>=0.4:
+            res = color[7]
+        elif x<0.4 and x>=0.3:
+            res = color[8]
+        elif x<0.3 and x>=0.2:
+            res = color[9]
+        elif x<0.2 and x>=0.1:
+            res = color[10]
+        elif x<0.1 and x>=0:
+            res = color[11]
+    
     return(res)
 
 

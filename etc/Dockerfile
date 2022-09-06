@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stable
 LABEL org.opencontainers.image.authors=carine.rey@ens-lyon.org
 
 RUN apt-get update && \

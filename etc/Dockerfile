@@ -1,6 +1,15 @@
 FROM debian:bullseye
 LABEL org.opencontainers.image.authors=carine.rey@ens-lyon.org
 
+FROM debian:buster
+RUN echo 'deb http://deb.debian.org/debian buster main' > /etc/apt/sources.list.d/backports.list
+RUN echo 'deb-src http://deb.debian.org/debian buster main' > /etc/apt/sources.list.d/backports.list
+RUN echo 'deb http://deb.debian.org/debian-security/ buster/updates main' > /etc/apt/sources.list.d/backports.list
+RUN echo 'deb-src http://deb.debian.org/debian-security/ buster/updates main' > /etc/apt/sources.list.d/backports.list
+RUN echo 'deb http://deb.debian.org/debian buster-updates main' > /etc/apt/sources.list.d/backports.list
+RUN echo 'deb-src http://deb.debian.org/debian buster-updates main' > /etc/apt/sources.list.d/backports.list
+
+
 RUN apt-get update && \
     apt-get install --no-install-recommends -qy \
        git \

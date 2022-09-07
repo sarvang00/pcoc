@@ -15,8 +15,6 @@ RUN apt-get update && \
        gnupg2 \
        dirmngr \
        python-pip \
-       python-numpy \
-       python-pandas \
        python-setuptools \
        python-dev \
        sudo \
@@ -33,7 +31,7 @@ RUN apt-get update && \
 
 RUN pip install ete3==3.0.0b35
 RUN pip install biopython==1.76
-RUN pip install pandas
+RUN pip install numpy pandas
 RUN pip install scipy
 
 ENV LD_LIBRARY_PATH=/usr/local/lib/

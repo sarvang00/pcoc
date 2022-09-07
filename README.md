@@ -539,3 +539,7 @@ $CMD_PCOC_DOCKER pcoc_sim.py -td tree_dir -o output_pcoc_sim -n_sc 180 -nb_sampl
 ___
 
 Have fun with ![](etc/logo.png) !!
+
+# Acknowledgement
+- This repo is a fork of [CarineRey's PCOC project](https://github.com/CarineRey/pcoc).
+- I acknowledge the effort of [Nitasha Gupta](https://github.com/nitasha18) for helping update the Dockerfile.
